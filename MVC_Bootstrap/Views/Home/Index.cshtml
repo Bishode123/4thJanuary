@@ -1,0 +1,55 @@
+﻿@model MVC_Bootstrap.Models.Employee
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="~/Scripts/jquery-1.8.0.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+
+
+</head>
+<body>
+    <div>
+        <h1>Employee Details Form</h1>
+
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary()
+
+            @Html.LabelFor(p => p.FirstName)
+
+            @Html.TextAreaFor(p => p.FirstName)
+            @Html.ValidationMessageFor(p => p.FirstName)
+            <br />
+            <br />
+
+            @Html.LabelFor(p => p.LastName)
+
+            @Html.TextAreaFor(p => p.LastName)
+            @Html.ValidationMessageFor(p => p.LastName)
+            <br />
+            <br />
+
+            @Html.LabelFor(p => p.Age)
+
+            @Html.TextAreaFor(p => p.Age)
+            @Html.ValidationMessageFor(p => p.Age)
+            <br />
+            <br />
+            <input type="submit" value="Send Data" />
+
+        }
+    </div>
+</body>
+</html>
+
+
